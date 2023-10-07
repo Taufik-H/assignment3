@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Anime Template" />
+    <meta name="keywords" content="Anime, unica, creative, html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link
+      href="https://unpkg.com/filepond/dist/filepond.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
+      rel="stylesheet"
+    />
+    <title>Anime | Template</title>
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css" />
+    <link rel="stylesheet" href="css/plyr.css" type="text/css" />
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+  </head>
+
+  <body>
+    <!-- Page Preloder -->
+    <!-- <div id="preloder">
+        <div class="loader"></div>
+      </div> -->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="header__logo">
+              <a href="./index.html">
+                <img src="img/logo.png" alt="" />
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="header__nav"></div>
+          </div>
+          <div class="col-lg-2">
+            <div class="header__right">
+              <button
+                data-toggle="modal"
+                data-target="#createNewMovie"
+                class="btn btn-primary"
+              >
+                Add new anime
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+      </div>
+    </header>
+    <!-- Header End -->
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <div
+      class="modal fade p-5"
+      id="modal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-fullscreen modal-dialog-centered"
+        role="document"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Detail Anime</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <!-- Image on the left -->
+              <div class="col-md-2 modal-img-section">
+                <img
+                  class="img-fluid"
+                  id="modal-image"
+                  src="..."
+                  alt="Anime Image"
+                />
+              </div>
+              <!-- Details on the right -->
+              <div class="col-md-7 modal-detail-section">
+                <h3 id="modal-title" class="mb-3">Anime Title</h3>
+                <!-- Bigger title -->
+
+                <p class="mb-2">
+                  <i class="fas fa-film mr-2"></i>
+                  <!-- Icon for episodes -->
+                  Episodes: <span id="modal-episodes"></span>
+                </p>
+
+                <p class="mb-2">
+                  <i class="fas fa-trophy mr-2"></i>
+                  <!-- Icon for ranking -->
+                  Ranking: <span id="modal-ranking"></span>
+                </p>
+
+                <p class="mb-2">
+                  <i class="fas fa-sync-alt mr-2"></i>
+                  <!-- Icon for status -->
+                  Status: <span id="modal-status"></span>
+                </p>
+
+                <p>
+                  <i class="fas fa-tags mr-2"></i>
+                  <!-- Icon for genres -->
+                  Genres:
+                  <span id="modal-genres"></span>
+                </p>
+              </div>
+            </div>
+            <!-- Divider -->
+            <hr />
+            <!-- Description below -->
+            <div>
+              <h5>Description</h5>
+              <p id="modal-synopsis">...</p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- modal create -->
+    <!-- modal create -->
+    <div
+      class="modal fade"
+      id="createNewMovie"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="createMovieLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="createMovieLabel">Add New Anime</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="/items" method="post" enctype="multipart/form-data">
+              <div class="form-group">
+                <label for="title">Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="title"
+                  placeholder="Title"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="description">Description</label>
+                <textarea
+                  class="form-control"
+                  name="description"
+                  placeholder="Description"
+                  rows="4"
+                  required
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="episodes">Episodes</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  name="episodes"
+                  placeholder="Episodes"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="status">Status</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="status"
+                  placeholder="Status (e.g., Ongoing, Completed)"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="genres">Genres</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="genres"
+                  placeholder="Genres (separate with comma)"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="cover">Cover Image</label>
+                <input
+                  type="file"
+                  class="form-control-file"
+                  name="cover"
+                  required
+                />
+              </div>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal edit -->
+    <div
+      class="modal fade"
+      id="modal-edit"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit Data</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="title" class="col-form-label">Title:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="title"
+                  name="title"
+                />
+              </div>
+              <div class="form-group">
+                <label for="status-edit" class="col-form-label">Status:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="status-edit"
+                  name="status"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="genres" class="col-form-label">Genre:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="genres"
+                  name="genres"
+                />
+                <label for="episodes" class="col-form-label">Episodes:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="episodes"
+                  name="episodes"
+                />
+              </div>
+              <div class="form-group">
+                <label for="cover" class="col-form-label"
+                  >Cover Image harus di isi kembali:</label
+                >
+                <input
+                  required
+                  type="file"
+                  class="form-control"
+                  id="cover"
+                  name="cover"
+                />
+                <div id="cover-preview"></div>
+              </div>
+              <div class="form-group">
+                <label for="synopsis" class="col-form-label">Sinopsis:</label>
+                <textarea
+                  class="form-control"
+                  id="synopsis"
+                  name="synopsis"
+                ></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary btn-save">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Product Section Begin -->
+    <section class="product spad p-4">
+      <div class="container">
+        <div class="row" id="list-movie"></div>
+      </div>
+    </section>
+
+    <!-- Product Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+      <div class="page-up">
+        <a href="#" id="scrollToTopButton"
+          ><span class="arrow_carrot-up"></span
+        ></a>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="footer__logo">
+              <a href="./index.html"><img src="img/logo.png" alt="" /></a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="footer__nav">
+              <ul>
+                <li class="active"><a href="./index.html">Homepage</a></li>
+                <li><a href="./categories.html">Categories</a></li>
+                <li><a href="./blog.html">Our Blog</a></li>
+                <li><a href="#">Contacts</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <p>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;
+              <script>
+                document.write(new Date().getFullYear());
+              </script>
+              All rights reserved | This template is made with
+              <i class="fa fa-heart" aria-hidden="true"></i> by
+              <a href="https://colorlib.com" target="_blank">Colorlib</a>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Search model Begin -->
+    <div class="search-model">
+      <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="search-close-switch"><i class="icon_close"></i></div>
+        <form class="search-model-form">
+          <input type="text" id="search-input" placeholder="Search here....." />
+        </form>
+      </div>
+    </div>
+    <!-- Search model end -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
