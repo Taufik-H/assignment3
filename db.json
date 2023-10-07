@@ -1,5 +1,15 @@
 {
-  "items": [],
+  "items": [
+    {
+      "title": "test",
+      "description": "asdasd",
+      "episodes": "12",
+      "status": "end",
+      "genres": "Action,Comedy,Sci-Fi",
+      "cover": "1696691469787.png",
+      "id": 1
+    }
+  ],
   "meta": {
     "page": 1,
     "size": 10,
